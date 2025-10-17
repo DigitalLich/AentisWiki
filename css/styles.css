@@ -1,8 +1,4 @@
-main > div {
-  background: #1a1a1a;
-  padding: 1rem;
-  border-radius: 8px;
-}
+/* ------------------------------------------ GLOBAL STYLES ------------------------------------------ */
 
 /* Grid Spans */
 .col1 { grid-column: span 1; }
@@ -11,20 +7,20 @@ main > div {
 .col4 { grid-column: span 4; }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #1a1a1a;
-  color: white;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: #f2f2f2;
+  line-height: 1.7;
 }
 
 header {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  background-color: black;
-  color: yellow;
-  padding: 10px 20px;
-  column-gap: 20px;
+  background-color: #111;
+  color: #ffcc66;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .main-content {
@@ -34,13 +30,20 @@ header {
   padding: 20px;
 }
 
+main > div {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 /* ------------------------------------------ MAIN CONTENT AREA ------------------------------------------ */
 
 /* SIDEBAR */
 .left-sidebar {
-  background-color: #121212;
-  color: white;
-  padding: 15px;
+  background-color: #151515;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+  padding: 20px;
 }
 
 .accordion {
@@ -53,12 +56,23 @@ header {
   text-decoration: none;
 }
 .accordion-item-summary {
-  padding: 5px;
-  cursor: pointer;
+  font-weight: 600;
+  color: #ff9966;
 }
 
 .accordion-item-content {
   padding: 1px;
+}
+
+.accordion a {
+  display: block;
+  padding: 3px 0;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.accordion a:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 .accordion ul {
@@ -79,6 +93,15 @@ header {
   background-color: #121212;
   padding: 20px;
   grid-auto-flow: row dense;
+  border-radius: 12px;
+}
+
+.right-content section {
+  background-color: #1b1b1b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .right-content h2 {
@@ -113,12 +136,7 @@ header {
 .article {
   max-width: 900px;
   display: grid;
-  flex-direction: row;
   justify-content: space-between;
-}
-
-.article-content {
-  padding-right: 16px;
 }
 
 .article-image {
@@ -126,8 +144,15 @@ header {
 }
 
 .fact-sheet {
-  background-color: #121212;
+  background-color: #151515;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
   padding: 20px;
+}
+
+.fact-sheet h3 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.8rem;
 }
 
 .fact-sheet ul {
@@ -154,6 +179,11 @@ footer {
 }
 
 /* ------------------------------------------ DETAILS AREA ------------------------------------------ */
+
+.title{
+  justify-self: center;
+  text-align: center;
+}
 
 h1, h2, h3 {
   margin: 1.5rem 0 1rem;
@@ -184,11 +214,6 @@ h3 {
   border-radius: 80%;
 }
 
-.article a {
-  color: #66ccff;
-  text-decoration: none;
-}
-
 .logo {
   justify-self: start;
 }
@@ -197,10 +222,9 @@ h3 {
   padding-left: 16px;
   max-height: 50px;
 }
-
-.title{
-  justify-self: center;
-  text-align: center;
+.article a {
+  color: #66ccff;
+  text-decoration: none;
 }
 
 /* Search Box*/
@@ -210,18 +234,32 @@ h3 {
 }
 
 .search-box input {
-  padding: 5px;
-  border: 1px solid gray;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  background-color: #222;
+  color: #eee;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+  background-color: #333;
 }
 
 .search-box button {
-  background-color: gray;
-  color: white;
-  border: 1px solid gray;
-  padding: 5px 10px;
-  cursor: pointer;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ffcc66, #ff9966);
+  border: none;
+  color: black;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
 }
 
+.search-box button:hover {
+  transform: scale(1.05);
+}
 
 /* Images & Captions */
 figure {
