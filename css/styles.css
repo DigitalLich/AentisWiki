@@ -4,51 +4,17 @@ main > div {
   border-radius: 8px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #1a1a1a;
-  color: white;
-}
-
-/* Spans */
+/* Grid Spans */
 .col1 { grid-column: span 1; }
 .col2 { grid-column: span 2; }
 .col3 { grid-column: span 3; }
 .col4 { grid-column: span 4; }
 
-h1, h2, h3 {
-  margin: 1.5rem 0 1rem;
-}
-
-h1 {
-  font-size: 2.2rem;
-  color: #fff;
-  margin: 0 0 1rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.6rem;
-  color: #ffcc66;
-}
-
-h3 {
-  font-size: 1.3rem;
-  color: #ff9966;
-}
-
-#logo img {
-  max-width: 250px;
-  display: block;
-  margin: 2rem auto;
-  border-radius: 80%;
-}
-
-.article a {
-  color: #66ccff;
-  text-decoration: none;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: white;
 }
 
 header {
@@ -61,49 +27,14 @@ header {
   column-gap: 20px;
 }
 
-.logo {
-  justify-self: start;
-}
-
-.logo img {
-  padding-left: 16px;
-  max-height: 50px;
-}
-
-.title{
-  justify-self: center;
-  text-align: center;
-}
-
-.search-box {
-  justify-self: end;
-}
-
-.search-box input {
-  padding: 5px;
-  border: 1px solid gray;
-}
-
-.search-box button {
-  background-color: gray;
-  color: white;
-  border: 1px solid gray;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.user-links a {
-  color: gray;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
 .main-content {
   display: grid;
   grid-template-columns: 200px 1fr 250px; /* sidebar | content | article-image */
   gap: 20px;
   padding: 20px;
 }
+
+/* ------------------------------------------ MAIN CONTENT AREA ------------------------------------------ */
 
 /* SIDEBAR */
 .left-sidebar {
@@ -127,9 +58,20 @@ header {
 }
 
 .accordion-item-content {
-  padding: 5px;
+  padding: 1px;
 }
 
+.accordion ul {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.accordion li {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* RIGHT CONTENT */
 .right-content {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -199,4 +141,156 @@ header {
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+/* ------------------------------------------ DETAILS AREA ------------------------------------------ */
+
+h1, h2, h3 {
+  margin: 1.5rem 0 1rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #ffcc66;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #ff9966;
+}
+
+#logo img {
+  max-width: 250px;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 80%;
+}
+
+.article a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.logo {
+  justify-self: start;
+}
+
+.logo img {
+  padding-left: 16px;
+  max-height: 50px;
+}
+
+.title{
+  justify-self: center;
+  text-align: center;
+}
+
+/* Search Box and User Links */
+
+.search-box {
+  justify-self: end;
+}
+
+.search-box input {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.search-box button {
+  background-color: gray;
+  color: white;
+  border: 1px solid gray;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+/* Images & Captions */
+figure {
+  border: none;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 400px;
+  margin: auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0.5rem 0 0.75rem;
+}
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 6px 8px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* Blockquote*/
+blockquote {
+  border-left: 4px solid #ffcc66;
+  padding-left: 1rem;
+  color: #cccccc;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 6px;
+}
+
+td {
+  text-align: center;
+}
+
+.Kartion {
+  background-color: #3c6630;
+}
+.Zersillis {
+  background-color: #6a6b37;
+}
+.Tanyll {
+  background-color: #282969;
+}
+.Aentis {
+  background-color: #800000;
 }

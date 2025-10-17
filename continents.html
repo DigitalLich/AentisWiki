@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+    <link rel="icon" type="image/ico" href="/assets/ico/AentisLogo.ico">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <img
+                src="/assets/ico/AentisLogov2T.png"
+                alt="Aentis Logo"/>
+        </div>
+        <div class="title">
+            <h1>Continents</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search Aentis..."/>
+            <button type="button">Search</button>
+        </div>
+    </header>
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="accordion">
+                <details class="accordion-item" open="">
+                    <summary class="accordion-item-summary">Index</summary>
+                    <div class="accordion-item-content">
+                        <ul>
+                            <li><a href="/index.html">Welcome</a></li>
+                            <li><a href="/continents.html">Continents</a></li>
+                                <ul>
+                                    <li><a href="/html/continents/eusacix.html">Eusacix</a></li>
+                                </ul>
+                            <li><a href="/about.html">About</a></li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+            <section id="WorldMap" class="col2">
+                <figure>
+                    <img
+                        src="assets/maps/AentisWorldMap.jpg"
+                        alt="Aentis World Map" />
+                    <figcaption>Aentis World Map</figcaption> <!-- figcaption for the figure element -->
+                </figure>
+            </section>
+
+            <section id="Intro" class="col2">
+                <h2>The World</h2>
+                <p>
+                    The world in itself is divided in 6 continents, with several diferent nations and biomes in each one of them.
+                    The names of them are still <s>being written and/or haven't been discovered by players</s> forgotten by time.
+                    However, the one continent that has been brewing in livelihood is Eusacix.
+                </p>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>TTRPG System:</strong> PF2e
+                    </li>
+                    <li class="fact-group">
+                        <strong>World Creation:</strong> Feb, 2021
+                    </li>
+                    <li class="fact-group">
+                        <strong>Author:</strong> DigitalLich
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
