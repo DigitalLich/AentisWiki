@@ -5,7 +5,7 @@
     <title>Aentis</title>
     <link rel="icon" type="image/ico" href="/assets/ico/AentisLogo.ico">
     <link href="/css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="script.js" defer></script>
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <header role="banner">
@@ -18,50 +18,17 @@
             <h1>Welcome to Aentis</h1>
         </div>
         <div class="search-box">
-            <input type="text" placeholder="Search Aentis..."/>
-            <button type="button">Search</button>
+            <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            <button id="codex-search-button" type="button">Search</button>
         </div>
     </header>
     <div class="main-content">
         <!--Sidebar-->
         <aside class="left-sidebar">
-            <div class="accordion">
-                <h3>World Codex</h3>
-                <details class="accordion-item">
-                    <summary class="accordion-item-summary">Geo & Org</summary>
-                    <div class="accordion-item-content">
-                        <ul>
-                            <li><a href="/continents.html">Continents</a></li>
-                            <details class="accordion-subitem">
-                            <summary class="accordion-subitem-summary">Eusacix</summary>
-                            <div class="accordion-subitem-content">
-                                <ul>
-                                    <li><a href="/hestein-empire.html">Hestein Empire</a></li>
-                                </ul>
-                            </div>
-                            </details>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="accordion-item">
-                    <summary class="accordion-item-summary">Meta</summary>
-                    <div class="accordion-item-content">
-                        <ul>
-                            <li><a href="/index.html">Welcome</a></li>
-                        </ul>
-                    </div>
-                </details>
-                
-                <details>
-                    <summary class="accordion-item-summary">Author's Notes</summary>
-                    <div class="accordion-item-content">
-                        <ul>
-                            <li><a href="/about.html">About</a></li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
         </aside>
         <!--Main Content-->
         <div class="right-content">

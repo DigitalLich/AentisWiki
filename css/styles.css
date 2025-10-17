@@ -39,88 +39,67 @@ main > div {
 /* ------------------------------------------ MAIN CONTENT AREA ------------------------------------------ */
 
 /* SIDEBAR */
+/* Drill-down sidebar */
 .left-sidebar {
   background-color: #151515;
   border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
-  padding: 20px;
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
 }
 
-.accordion {
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.breadcrumb a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.breadcrumb .sep { margin: 0 6px; color: #555; }
+
+.codex-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 
-.accordion a {
-  color: #66ccff;
-  text-decoration: none;
-}
-.accordion-item-summary {
-  font-weight: 600;
-  color: #ff9966;
-}
-
-.accordion-item-content {
-  padding: 1px;
-}
-
-.accordion a {
-  display: block;
-  padding: 3px 0;
-  border-radius: 4px;
-  transition: background 0.2s ease;
-}
-
-.accordion a:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.accordion h3 {
-  color: #e6b566;
-  margin-top: 0.25rem;
-  margin-bottom: 0.8rem;
-}
-
-.accordion ul {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.accordion li {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* Nested Accordion */
-.accordion-subitem {
-  margin-left: 1rem;
-  border-radius: 6px;
-  padding-left: 0.5rem;
-}
-
-.accordion-subitem-summary {
-  padding: 5px;
+.codex-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #1a1a1a;
   cursor: pointer;
-  color: #ffcc66;
-  font-weight: 600;
+  user-select: none;
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
-.accordion-subitem-summary:hover {
-  color: #ff9966;
-}
+.codex-item:hover { background: #222; transform: translateX(2px); }
+.codex-item:focus { outline: 2px solid #ffcc66; }
 
-.accordion-subitem-content {
-  padding: 4px 0 4px 10px;
-}
+.codex-item[role="button"] { color: #ffcc66; } /* folders */
+.codex-item a { color: #66ccff; text-decoration: none; flex: 1; }
 
-.accordion-subitem a {
-  color: #66ccff;
-  text-decoration: none;
-}
+/* simple icons using emoji (swap for SVGs if you like) */
+.codex-icon { width: 1.1rem; text-align: center; opacity: 0.9; }
 
-.accordion-subitem a:hover {
-  text-decoration: underline;
+/* back row */
+.codex-back {
+  background: #111;
+  color: #ddd;
 }
+.codex-back:hover { background: #191919; }
+
+/* small fade in */
+.codex-list.fade-in { animation: codexFade 150ms ease-out; }
+@keyframes codexFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
 
 /* RIGHT CONTENT */
