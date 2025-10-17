@@ -91,6 +91,38 @@ main > div {
   margin-right: 0;
 }
 
+/* Nested Accordion */
+.accordion-subitem {
+  margin-left: 1rem;
+  border-radius: 6px;
+  padding-left: 0.5rem;
+}
+
+.accordion-subitem-summary {
+  padding: 5px;
+  cursor: pointer;
+  color: #ffcc66;
+  font-weight: 600;
+}
+
+.accordion-subitem-summary:hover {
+  color: #ff9966;
+}
+
+.accordion-subitem-content {
+  padding: 4px 0 4px 10px;
+}
+
+.accordion-subitem a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.accordion-subitem a:hover {
+  text-decoration: underline;
+}
+
+
 /* RIGHT CONTENT */
 .right-content {
   display: grid;
