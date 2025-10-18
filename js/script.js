@@ -308,10 +308,10 @@ function submitSearch() {
     render();
 }
 
-btn?.addEventListener("click", submitSearch);
 input?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") submitSearch();
 });
+
 
 /*  -----------------------------------------
         Init from hash & keep synced
