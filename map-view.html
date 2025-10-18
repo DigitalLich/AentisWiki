@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Aentis Map Viewer</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: #0e0e0e;
+        color: white;
+        font-family: sans-serif;
+      }
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      .back-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* ⬅ moved from left to right */
+        background: rgba(0,0,0,0.5);
+        color: #ffcc66;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        z-index: 999;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 204, 102, 0.2);
+        transform: scale(1.05);
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <a href="#" class="back-btn" id="back-btn">← Back</a>
+    <div id="map"></div>
+
+    <script>
+      // Get the "map" query parameter
+      const params = new URLSearchParams(window.location.search);
+      const mapFile = params.get("map");
+
+      if (!mapFile) {
+        document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%'>No map selected.</h2>";
+        throw new Error("No map parameter provided");
+      }
+
+      // You can store the size of each map here (in pixels)
+      const mapSizes = {
+        "AentisWorldMap.webp": [4640, 3472],
+        "EusacixContinentV2.webp": [7680, 4320]
+      };
+
+      const size = mapSizes[mapFile];
+      if (!size) {
+        document.body.innerHTML = `<h2 style='text-align:center;margin-top:20%'>Unknown map: ${mapFile}</h2>`;
+        throw new Error("Unknown map size");
+      }
+
+      const [w, h] = size;
+
+      const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -3,
+        maxZoom: 4,
+        zoomControl: true
+      });
+
+      const bounds = [[0, 0], [h, w]];
+      const imageUrl = `assets/maps/${mapFile}`;
+      L.imageOverlay(imageUrl, bounds).addTo(map);
+      map.fitBounds(bounds);
+      // ---------------------------
+      // Back button navigation logic
+      // ---------------------------
+      const backBtn = document.getElementById("back-btn");
+      backBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Go back to previous page if there is history, otherwise home
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "index.html";
+        }
+      });
+    </script>
+  </body>
+</html>

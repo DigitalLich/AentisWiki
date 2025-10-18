@@ -331,3 +331,15 @@ td {
 .Aentis {
   background-color: #800000;
 }
+
+/* Map */
+.map-thumb {
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.map-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
