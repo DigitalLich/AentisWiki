@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/AentisWiki/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/calendar.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Welcome to Aentis</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+
+            <section class="col4 calendar">
+                <h2>Calendar of Aentis</h2>
+
+                <div class="calendar-header">
+                    <button id="prev-month">⟨</button>
+                    <div id="month-year-display">
+                        <span id="month-name"></span>
+                        <span id="year-display">750 EE</span>
+                    </div>
+                    <button id="next-month">⟩</button>
+                </div>
+
+                <!-- Popup (must be inside calendar section) -->
+                <div id="month-year-popup" class="popup hidden">
+                    <div class="popup-header">
+                        <button id="prev-year">⟨</button>
+                        <span id="popup-year-label">750 EE</span>
+                        <button id="next-year">⟩</button>
+                    </div>
+                    <div id="month-grid" class="month-grid"></div>
+                </div>
+
+                <div id="season-name" class="season-name"></div>
+                <div class="calendar-grid" id="calendar-grid"></div>
+            </section>
+
+
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>TTRPG System:</strong> PF2e
+                    </li>
+                    <li class="fact-group">
+                        <strong>World Creation:</strong> Feb, 2021
+                    </li>
+                    <li class="fact-group">
+                        <strong>Author:</strong> DigitalLich
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

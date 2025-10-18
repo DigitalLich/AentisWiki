@@ -33,6 +33,12 @@ const CODEX_DATA = {
             "Continents": { type: "link", href: "continents.html" }
         }
     },
+    "Data": {
+        type: "folder",
+        children: {
+            "Calendar": { type: "link", href: "html/data/calendar.html" },
+        }
+    },
     "Meta": {
         type: "folder",
         children: {
