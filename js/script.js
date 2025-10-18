@@ -8,22 +8,22 @@ const CODEX_DATA = {
             "Eusacix": {
                 type: "folder",
                 children: {
-                    "Hestein Empire": { type: "link", href: "/hestein-empire.html" }
+                    "Hestein Empire": { type: "link", href: "html/eusacix/hestein-empire.html" }
                 }
             },
-            "Continents": { type: "link", href: "/continents.html" }
+            "Continents": { type: "link", href: "continents.html" }
         }
     },
     "Meta": {
         type: "folder",
         children: {
-            "Welcome": { type: "link", href: "/index.html" },
+            "Welcome": { type: "link", href: "index.html" },
         }
     },
     "Author's Notes": {
         type: "folder",
         children: {
-            "About": { type: "link", href: "/about.html" }
+            "About": { type: "link", href: "about.html" }
         }
     }
 };
