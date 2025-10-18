@@ -15,7 +15,7 @@
 
     <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="js/script.js" defer></script>
+    <script type="module" src="js/script.js"></script>
 </head>
 <body>
     <header role="banner">
@@ -47,7 +47,7 @@
                 <h2>Hestein</h2>
                 <p>
                     The Hestein Empire is a relative new nation formed with 350 years of history. It was founded by Oswin Hestein also known as The Father Founder.
-                    This nation is dividev in two regions, the northern region is known as Hesteinese Region, the southern region is known as the Lhumigian Region,
+                    This nation is divided in two regions, the northern region is known as Hesteinese Region, the southern region is known as the Lhumigian Region,
                     and two special regions.
                     And futhermore, each region is divided in several duchies.<br/> <br/>
                 </p>
@@ -85,6 +85,50 @@
                 </figure>
             </section>
 
+            <section class="col4">
+                <h3>Structure</h3>
+                <p> Hestein has a political system called Henerschy. This political structure is divided in the following hierarchy:</p>
+                <pre class="mermaid">
+                flowchart TD
+                    id4(Duke) --> id3
+                    id1(Emperor) ---> id2(Empress)
+                    id1 --> id3
+                    id2 --> id3(Royal Council)
+                    id16(Royal Elder) --> id3
+                    id5(Savalh) --> id3
+                    id10(High Elder) --> id5
+                    id13(High Orc King) --> id5
+                    id3 --> id6
+                    id5 --> id14
+                    id3 --> id11(Elycir)
+                    id3 --> id14(High Chief)
+                    id4 --> id6(Counts)
+                    id6 --> id7(Barons)
+                    id7 --> id8(Baronets)
+                    id8 --> id9(Knights)
+                    id5 --> id11
+                    id11 --> id12(Eldar)
+                    id14 --> id15(Lesser Chief)
+
+                    %% clickable internal links
+                    click id1 "javascript:void(0)" "View Emperor"
+                    click id2 "javascript:void(0)" "View Empress"
+                    click id3 "javascript:void(0)" "Royal Council"
+                    click id4 "javascript:void(0)" "Dukes of the Realm"
+                    click id5 "javascript:void(0)" "Learn about Savalh"
+                    click id6 "javascript:void(0)" "View Counts"
+                    click id7 "javascript:void(0)" "View Barons"
+                    click id8 "javascript:void(0)" "View Baronets"
+                    click id9 "javascript:void(0)" "View Knights"
+                    click id10 "javascript:void(0)" "View High Elder"
+                    click id11 "javascript:void(0)" "View Elycir"
+                    click id12 "javascript:void(0)" "View Eldar"
+                    click id13 "javascript:void(0)" "View High Orc King"
+                    click id14 "javascript:void(0)" "View High Chief"
+                    click id15 "javascript:void(0)" "View Lesser Chief"
+                    click id16 "javascript:void(0)" "View Royal Elder"
+                </pre>
+            </section>
         </div>
         <!--Fact Sheet-->
         <div class="article-image">

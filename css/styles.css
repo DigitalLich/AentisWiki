@@ -165,6 +165,27 @@ header {
 }
 .right-content .map-card img { max-width: 100%; height: auto; }
 
+.right-content .mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #1b1b1b;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+/* Limit the internal SVG size to avoid stretching too wide */
+.right-content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
 /* ARTICLE & FACT SHEET */
 .article-image {
   text-align: center;

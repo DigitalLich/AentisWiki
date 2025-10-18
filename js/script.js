@@ -1,4 +1,23 @@
 /*  -----------------------------------------
+                    Mermaid.js
+    ----------------------------------------- */
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
+mermaid.initialize({
+  startOnLoad: true,
+  theme: "dark",
+  securityLevel: "loose"
+});
+
+function renderMermaid() {
+  try {
+    mermaid.run({ querySelector: '.mermaid' });
+  } catch (err) {
+    console.error("Mermaid render error:", err);
+  }
+}
+
+/*  -----------------------------------------
                     Data Tree
     ----------------------------------------- */
 const CODEX_DATA = {
@@ -294,7 +313,9 @@ function render() {
     } else {
         renderBrowse();
     }
+    renderMermaid();
 }
+
 
 /*  -----------------------------------------
     Search wiring (button + Enter + hash)
