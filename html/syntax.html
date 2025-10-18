@@ -3,8 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aentis</title>
-    <link rel="icon" type="image/ico" href="/assets/ico/AentisLogo.ico">
-    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/AentisWiki/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <script src="js/script.js" defer></script>
 </head>
 <body>
