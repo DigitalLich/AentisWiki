@@ -1,21 +1,121 @@
 /*  -----------------------------------------
-                    Mermaid.js
+                Mermaid.js
     ----------------------------------------- */
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 
 mermaid.initialize({
-  startOnLoad: true,
-  theme: "dark",
-  securityLevel: "loose"
+    startOnLoad: false,
+    theme: "dark",
+    securityLevel: "loose",
+    flowchart: { htmlLabels: true, curve: "basis" }
 });
 
-function renderMermaid() {
-  try {
-    mermaid.run({ querySelector: '.mermaid' });
-  } catch (err) {
-    console.error("Mermaid render error:", err);
-  }
+const PANZOOMS = [];
+
+// Attach svg-pan-zoom to rendered Mermaid SVG (buttons-only zoom).
+function enablePanZoomOn(container) {
+    const svg = container.querySelector("svg");
+    if (!svg) return;
+
+    // Let the SVG scale to its container
+    svg.removeAttribute("width");
+    svg.removeAttribute("height");
+    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+    const panZoom = window.svgPanZoom(svg, {
+        zoomEnabled: true,
+        panEnabled: true,
+        controlIconsEnabled: false,
+        fit: true,
+        center: true,
+        minZoom: 0.2,
+        maxZoom: 10,
+        dblClickZoomEnabled: false,     // disable double-click zoom
+        zoomScaleSensitivity: 0.3
+    });
+
+    // Disable mouse wheel zoom so only buttons/selector control zoom
+    if (panZoom.disableMouseWheelZoom) {
+        panZoom.disableMouseWheelZoom();
+    }
+
+    container._panZoom = panZoom;
+    PANZOOMS.push(panZoom);
+
+    // Keep it fitted on resize
+    const onResize = () => {
+        panZoom.resize();
+        panZoom.fit();
+        panZoom.center();
+    };
+    window.addEventListener("resize", onResize);
 }
+
+
+// Render all Mermaid diagrams and attach pan/zoom behavior.
+async function renderMermaid() {
+    try {
+        await mermaid.run({ querySelector: ".mermaid" });
+        document.querySelectorAll(".mermaid").forEach(enablePanZoomOn);
+        syncSelectorToCurrentZoom();
+    } catch (err) {
+        console.error("Mermaid render error:", err);
+    }
+}
+
+// Sync the dropdown to first diagram's current zoom (default: 1).
+function syncSelectorToCurrentZoom() {
+    const select = document.getElementById("zoom-level");
+    if (!select || PANZOOMS.length === 0) return;
+    const z = PANZOOMS[0].getZoom?.() ?? 1;
+    let best = "1";
+    let diff = Infinity;
+    for (const opt of select.options) {
+        const val = parseFloat(opt.value);
+        const d = Math.abs(val - z);
+        if (d < diff) { diff = d; best = opt.value; }
+    }
+    select.value = best;
+}
+
+// Hook up +/selector/− buttons
+document.addEventListener("DOMContentLoaded", () => {
+    const zoomInBtn  = document.getElementById("btn-zoom-in");
+    const zoomOutBtn = document.getElementById("btn-zoom-out");
+    const select     = document.getElementById("zoom-level");
+
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener("click", () => {
+            PANZOOMS.forEach(pz => {
+                const current = pz.getZoom();
+                pz.zoom(current * 1.2);
+                pz.center();
+            });
+            syncSelectorToCurrentZoom();
+        });
+    }
+
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener("click", () => {
+            PANZOOMS.forEach(pz => {
+                const current = pz.getZoom();
+                pz.zoom(current * 0.8);
+                pz.center();
+            });
+            syncSelectorToCurrentZoom();
+        });
+    }
+
+    if (select) {
+        select.addEventListener("change", () => {
+            const target = parseFloat(select.value || "1");
+            PANZOOMS.forEach(pz => {
+                pz.zoom(target);   // absolute zoom factor
+                pz.center();
+            });
+        });
+    }
+});
 
 /*  -----------------------------------------
                     Data Tree
@@ -27,7 +127,20 @@ const CODEX_DATA = {
             "Eusacix": {
                 type: "folder",
                 children: {
-                    "Hestein Empire": { type: "link", href: "html/eusacix/hestein-empire.html" }
+                    "Hestein Empire": {
+                        type: "folder",
+                        children: {
+                            "Factions": {
+                                type: "folder",
+                                children: {}
+                            },
+                            "Titles": {
+                                type: "folder",
+                                children: {}
+                            },
+                            "Hestein Empire": { type: "link", href: "html/eusacix/hestein-empire.html" }
+                        }
+                    },
                 }
             },
             "Continents": { type: "link", href: "continents.html" }
@@ -39,18 +152,13 @@ const CODEX_DATA = {
             "Calendar": { type: "link", href: "html/data/calendar.html" },
         }
     },
-    "Meta": {
-        type: "folder",
-        children: {
-            "Welcome": { type: "link", href: "index.html" },
-        }
-    },
     "Author's Notes": {
         type: "folder",
         children: {
             "About": { type: "link", href: "about.html" }
         }
-    }
+    },
+    "Welcome": { type: "link", href: "index.html" }
 };
 
 /*  -----------------------------------------

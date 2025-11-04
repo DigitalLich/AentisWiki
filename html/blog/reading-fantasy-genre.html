@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/AentisWiki/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <iMG src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Welcome to Aentis</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+            <section class="col4">
+                <h2>Reading Fantasy Genre</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum libero est, dignissim quis sapien eu, 
+                    faucibus fringilla ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas lobortis 
+                    lorem id metus porta ultrices. Curabitur nibh tortor, dictum vitae consequat eget, pharetra in nulla. Maecenas 
+                    eget rhoncus magna, at fringilla turpis. Cras in dictum nisl, ac mollis justo. Etiam sollicitudin lorem vel 
+                    imperdiet rutrum. Donec elementum libero pretium tellus blandit, sed convallis neque feugiat.
+                </p>
+            </section>
+            <section class="col4">
+                <h3>Lorem Ipsum</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum libero est, dignissim quis sapien eu:</p>
+                <div class="toolbar">
+                    <button id="btn-zoom-in" aria-label="Zoom in">+</button>
+
+                    <label for="zoom-level" class="sr-only">Zoom level</label>
+                    <select id="zoom-level" aria-label="Zoom level">
+                        <option value="0.5">50%</option>
+                        <option value="0.75">75%</option>
+                        <option value="1" selected>100%</option>
+                        <option value="1.25">125%</option>
+                        <option value="1.5">150%</option>
+                        <option value="2">200%</option>
+                    </select>
+
+                    <button id="btn-zoom-out" aria-label="Zoom out">−</button>
+                </div>
+                <pre class="mermaid">
+                flowchart LR
+                    Hb(Hobbit) --> GC(Golden Compass)
+                        GC --> TheM(The Magicians)
+                            TheM --> DF(Dresden Files)
+                                DF --> UF(Urban Fantasy)
+                                    UF --> AB(Anita Blake)
+                        GC --> PSS(Perdido Street Station)
+                            PSS --> GBS(Green Bone Saga)
+                                GBS --> BE(Broken Earth)
+                                GBS --> DC
+                                    DC --> UE
+                                GBS --> DT(Dark Tower)
+                                    DT --> DUE(Dark Urban Epics)
+                                    DT --> PC
+                                        PC --> FH
+                                            FH --> SWTWC
+                                        PC --> GTN
+                                            GTN --> AF
+                                GBS --> DR(Divine Rivals)
+                                    DR --> MG(Middle Game)
+                                        MG --> AF
+                                            AF --> LaMC
+                                    DR --> UR
+                            PSS --> SF
+                            PSS --> NW
+                        GC --> NH(Ninth House)
+                            NH --> DE(A Deadly Education)
+                                DE --> MB(Magic Bites)
+                                    MB --> UR
+                                DE --> DA
+                                    DA --> BoB(Blood over Brighthaven)
+                    Hb --> WoES(Wizard of Earthsea)
+
+
+                </pre>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>TTRPG System:</strong> PF2e
+                    </li>
+                    <li class="fact-group">
+                        <strong>World Creation:</strong> Feb, 2021
+                    </li>
+                    <li class="fact-group">
+                        <strong>Author:</strong> DigitalLich
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
