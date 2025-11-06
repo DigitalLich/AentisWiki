@@ -155,6 +155,12 @@ const CODEX_DATA = {
     "Author's Notes": {
         type: "folder",
         children: {
+            "Blog": {
+                type: "folder",
+                children: {
+                    "Reading Fantasy Genre": { type: "link", href: "html/blog/reading-fantasy-genre.html" },
+                }
+            },
             "About": { type: "link", href: "about.html" }
         }
     },
