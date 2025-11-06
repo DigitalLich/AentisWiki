@@ -1,10 +1,18 @@
 /* ------------------------------------------ GLOBAL STYLES ------------------------------------------ */
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   background-color: #0e0e0e;
   color: #f2f2f2;
   line-height: 1.7;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | main | footer */
+  min-height: 100vh;
 }
 
 header {
@@ -19,6 +27,7 @@ header {
 
 .main-content {
   display: grid;
+  grid-row: 2;
   grid-template-columns: 260px 1fr 300px; /* sidebar | content | article-image */
   gap: 24px;
   padding: 20px;
@@ -283,6 +292,8 @@ pre.mermaid {
 
 /* Footer */
 footer {
+  grid-row: 3;
+  margin-top: 0;
   text-align: center;
   font-size: 0.9rem;
   color: #888;
