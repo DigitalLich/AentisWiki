@@ -71,71 +71,73 @@
                 </div>
                 <pre class="mermaid">
                 flowchart LR
+                    subgraph Graph
+                    direction LR
                     Hb(Hobbit) --Less S&S--> GC(Golden Compass)
                         GC --Real World--> TheM(The Magicians)
                             TheM --More--> DF(Dresden Files)
                                 DF --More--> UF([Urban Fantasy])
-                                    UF --> AB{{Anita Blake}}
+                                    UF --Rec--> AB{{Anita Blake}}
                         GC --Adult--> PSS(Perdido Street Station)
-                            PSS --WTF?--> GBS[\Green Bone Saga/]
-                                GBS --> BE(Broken Earth)
-                                GBS --> UE([Urban Epics])
+                            PSS --Epic--> GBS[\Green Bone Saga/]
+                                GBS --More--> BE(Broken Earth)
+                                    BE --More--> UE([Urban Epics])
                                 GBS --Darker--> DT(Dark Tower)
                                     DT --More--> DUE([Dark Urban Epics])
                                     DT --Less Epic--> PS(Pet Semetary)
                                         PS --More--> FH([Fantsy Horror])
-                                            FH --> SWTWC{{Something Wicked This Way Comes}}
+                                            FH --Rec--> SWTWC{{Something Wicked This Way Comes}}
                                         PS --Less Horror--> GTN(Gideon the Ninth)
-                                            GTN --> AF([Alt Fantasy])
-                                GBS --Less--> DR(Divine Rivals)
+                                            GTN --Alt--> AF([Alt Fantasy])
+                                GBS --Less Epic--> DR(Divine Rivals)
                                     DR --Alt--> MG(Middle Game)
-                                        MG --> AF
-                                            AF --> LaMC{{Library at Mount Char}}
-                                    DR --> UR
-                            PSS --> SCF([Science Fiction Fantasy])
-                            PSS --Eh--> NW([New Weird])
+                                        MG --More--> AF
+                                            AF --Rec--> LaMC{{Library at Mount Char}}
+                                    DR --Romance--> UR
+                            PSS --Sci-Fi--> SCF([Science Fiction Fantasy])
+                            PSS --Weird--> NW([New Weird])
                         GC --Academia--> NH(Ninth House)
                             NH --More--> ADE(A Deadly Education)
                                 ADE --Romance--> MB(Magic Bites)
-                                    MB --> UR([Urban Romantasy])
-                                ADE --> DA([Dark Academia])
-                                    DA --> BoB{{Blood over Brighthaven}}
-                            NH -.-> DF
+                                    MB --More--> UR([Urban Romantasy])
+                                ADE --More--> DA([Dark Academia])
+                                    DA --Rec--> BoB{{Blood over Brighthaven}}
+                            NH -.Lustier.-> DF
                     Hb --Beauty--> WoES(Wizard of Earthsea)
                         WoES --Darker--> TDBC(The Dragonbone Chair)
                             TDBC(The Dragonbone Chair) --Transitional--> EotW(Eye of the World)
                                 EotW --Modern--> WotM(Will of the Many)
                                     WotM --Modern--> BS[/Brandon Sanderson\]
-                                        BS --> MF([Modern Fantasy])
-                                            MF --> Oe{{Orconomics}}
+                                        BS --More--> MF([Modern Fantasy])
+                                            MF --Rec--> Oe{{Orconomics}}
                             TDBC --Darker--> GoT(Game of Thrones)
                                 GoT --Modern--> WotM
                                 GoT --Less S&S--> TBI(The Blade Itself)
                                     TBI --Darker--> BC(Black Company)
                                         BC --Darker--> GD([Grim Dark])
-                                            GD --> B[/Berserk/]
+                                            GD --Rec--> B[/Berserk/]
                                 GoT --Higher--> EoM(Elric of Melnibone)
                                     EoM --Higher--> Mz[\Malazan/]
                                         Mz --> DE([Dark Epics])
-                                            DE --> DD[\Dandelion Dynasty/]
+                                            DE --High--> DD[\Dandelion Dynasty/]
                                             DE --Modern--> EotV{{Empire of the Vampire}}
-                                                EotV -.-> GTN
-                                            DE -..-> TBI
-                                            DE -..-> KD
-                                            DE -..-> BC
-                                            DE -..-> SoWWL
+                                                EotV -.Punker.-> GTN
+                                            DE -.Transitional..-> TBI
+                                            DE -.Transitional..-> KD
+                                            DE -.Transitional..-> BC
+                                            DE -.Transitional..-> SoWWL
                                     EoM --> TW(The Witcher)
                                     EoM <-.Transitional.-> EotW
                                     EoM -.-> TDBC
                                     EoM -.Darker.-> BC
                                 GoT --Sexier--> KD(Kushiel's Dart)
-                                    KD --> R([Romantasy])
-                                        R --> ACOTAR{{A Court of Thorns and Roses}}
-                                GoT -.-> DD
+                                    KD --More--> R([Romantasy])
+                                        R --Rec--> ACOTAR{{A Court of Thorns and Roses}}
+                                GoT -.Transitional.-> DD
                             TDBC --Less Epic--> M(Mistborn)
                                 M --Hard Magic--> SoWWL(Shadow of What Was Lost)
-                                    SoWWL --Hard--> BP(Black Prism)
-                                        BP --Hard--> HM([Hard Magic])
+                                    SoWWL --More--> BP(Black Prism)
+                                        BP --More--> HM([Hard Magic])
                                 M --More Changelling--> EoM
                                 M -.More Epic.-> EotW
                                 M -.Cozier.-> LnL
@@ -151,21 +153,25 @@
                                     OK --Epic--> SoA(Song of Achilles)
                                     OK --> GC2(Golden Compass)
                                     OK --Weird--> AIW([Alice in Wonderland])
-                                        AIW --> LP(The Little Prince)
-                                            LP --> SF([Strange Fantasy])
-                                                SF --> P{{Pironasi}}
+                                        AIW --More--> LP(The Little Prince)
+                                            LP --More--> SF([Strange Fantasy])
+                                                SF --Rec--> P{{Pironasi}}
                                     OK --YA--> SoC(Six of Crows)
                                         SoC --More--> E(Eragon)
                                             E --Curse of Endless Choices--> YA([YA])
                                                 YA -.-> SoA
                                     OK --Fairy--> TLU(The Last Unicorn)
-                                        TLU --> F([Fairytail])
-                                    
-                        Lg[[Legend]] --> Bo(Books)
-                        Bo --- Se[\Series/] 
+                                        TLU --More--> F([Fairytail])
+                        end
+                        
+                        subgraph Legend
+                        direction LR
+                        Bo(Books) --- Se[\Series/] 
                         Se --- Ge([Genre])
                         Ge --- Re{{Recommendation}}
                         Re --- Au[/Author\]
+                        Au --- Ma[/Manga/]
+                        end
 
                         %% Classes
                         classDef Default stroke:#63CA9A
@@ -174,10 +180,10 @@
                         classDef Alt stroke:#723E31
                         classDef Beauty stroke:#00FF00
                         classDef Cozy stroke:#D689A2
-                        classDef LessComedy stroke:#9C8D07
                         classDef Dark stroke:#808000
                         classDef Epic stroke:#0000FF
                         classDef LessEpic stroke:#008080
+                        classDef Fairy stroke:#800080
                         classDef HardMagic stroke:#812263
                         classDef High stroke:#733A30
                         classDef Modern stroke:#FFA500
@@ -185,19 +191,26 @@
                         classDef Romance stroke:#800000
                         classDef LessSnS stroke:#FFFF00
                         classDef Transitional stroke:#00FFFF
+                        classDef Weird stroke:#000080
                         classDef YA stroke:#EDDB12
 
                         %% Node Styles
                         Hb:::Default
-                        GBS:::Default
-                        BE:::Default
                         GTN:::Default
+                        OK:::Default
+                        M:::Default
+                        C:::Default
 
                         GC:::LessSnS
+                        GC2:::LessSnS
                         WoES:::Beauty
                         EotW:::Transitional
+                        SG:::Transitional
                         
+                        GBS:::Epic
+                        BE:::Epic
                         UE:::Epic
+                        SoA:::Epic
                         DR:::LessEpic
 
                         DT:::Dark
@@ -232,11 +245,47 @@
 
                         MB:::Romance
                         UR:::Romance
+                        KD:::Romance
+                        R:::Romance
+                        ACOTAR:::Romance
+
+                        SoWWL:::HardMagic
+                        BP:::HardMagic
+                        HM:::HardMagic
 
                         WotM:::Modern
                         BS:::Modern
                         MF:::Modern
                         Oe:::Modern
+
+                        EoM:::High
+                        TW:::High
+                        Mz:::High
+                        DE:::High
+                        DD:::High
+                        EotV:::High
+
+
+                        CoN:::Cozy
+                        LnL:::Cozy
+                        HinCS:::Cozy
+                        CZ:::Cozy
+
+                        AIW:::Weird
+                        LP:::Weird
+                        SF:::Weird
+                        P:::Weird
+
+                        SoC:::YA
+                        E:::YA
+                        YA:::YA
+
+                        TLU:::Fairy
+                        F:::Fairy
+
+                        %% Subgraphs Styles
+                        style Graph fill:#5C5C5C
+                        style Legend fill:#5C5C5C
 
                         %% Link Styles
                         linkStyle 0 stroke:#FFFF00
@@ -244,33 +293,36 @@
                         linkStyle 2 stroke:#008000
                         linkStyle 3 stroke:#008000
                         linkStyle 4 stroke:#008000
-                        linkStyle 5 stroke:
-                        linkStyle 6 stroke:
-                        linkStyle 7 stroke:
-                        linkStyle 8 stroke:
-                        linkStyle 9 stroke:
-                        linkStyle 10 stroke:
-                        linkStyle 11 stroke:
-                        linkStyle 12 stroke:
-                        linkStyle 13 stroke:
-                        linkStyle 14 stroke:
-                        linkStyle 15 stroke:
-                        linkStyle 16 stroke:
-                        linkStyle 17 stroke:
-                        linkStyle 18 stroke:
-                        linkStyle 19 stroke:
-                        linkStyle 20 stroke:
-                        linkStyle 21 stroke:
-                        linkStyle 22 stroke:
-                        linkStyle 23 stroke:
-                        linkStyle 24 stroke:
-                        linkStyle 25 stroke:
-                        linkStyle 26 stroke:
-                        linkStyle 27 stroke:
-                        linkStyle 28 stroke:
-                        linkStyle 29 stroke:
+                        linkStyle 5 stroke:#A13030
+                        linkStyle 6 stroke:#0000FF
+                        linkStyle 7 stroke:#0000FF
+                        linkStyle 8 stroke:#0000FF
+                        linkStyle 9 stroke:#808000
+                        linkStyle 10 stroke:#808000
+                        linkStyle 11 stroke:#808000
+                        linkStyle 12 stroke:#808000
+                        linkStyle 13 stroke:#808000
+                        linkStyle 14 stroke:#63CA9A
+                        linkStyle 15 stroke:#723E31
+                        linkStyle 16 stroke:#008080
+                        linkStyle 17 stroke:#723E31
+                        linkStyle 18 stroke:#723E31
+                        linkStyle 19 stroke:#723E31
+                        linkStyle 20 stroke:#800000
+                        linkStyle 21 stroke:#A13030
+                        linkStyle 22 stroke:#A13030
+                        linkStyle 23 stroke:#4445C7
+                        linkStyle 24 stroke:#4445C7
+                        linkStyle 25 stroke:#800000
+                        linkStyle 26 stroke:#800000
+                        linkStyle 27 stroke:#4445C7
+                        linkStyle 28 stroke:#4445C7
+                        linkStyle 29 stroke:#800000
                                     %%Half-Way
                         linkStyle 30 stroke:#00FF00
+                        linkStyle 31 stroke:#808000
+                        linkStyle 32 stroke:#00FFFF
+                        linkStyle 33 stroke:#FFA500
                         linkStyle 34 stroke:#FFA500
                         linkStyle 35 stroke:#FFA500
                         linkStyle 36 stroke:#FFA500
@@ -280,7 +332,53 @@
                         linkStyle 40 stroke:#808000
                         linkStyle 41 stroke:#808000
                         linkStyle 42 stroke:#808000
-
+                        linkStyle 43 stroke:#733A30
+                        linkStyle 44 stroke:#733A30
+                        linkStyle 45 stroke:#733A30
+                        linkStyle 46 stroke:#733A30
+                        linkStyle 47 stroke:#733A30
+                        linkStyle 48 stroke:#733A30
+                        linkStyle 49 stroke:#733A30
+                        linkStyle 50 stroke:#733A30
+                        linkStyle 51 stroke:#733A30
+                        linkStyle 52 stroke:#733A30
+                        linkStyle 53 stroke:#733A30
+                        linkStyle 54 stroke:#00FFFF
+                        linkStyle 55 stroke:#808000
+                        linkStyle 56 stroke:#808000
+                        linkStyle 57 stroke:#800000
+                        linkStyle 58 stroke:#800000
+                        linkStyle 59 stroke:#800000
+                        linkStyle 60 stroke:#63CA9A
+                        linkStyle 61 stroke:#008080
+                        linkStyle 62 stroke:#812263
+                        linkStyle 63 stroke:#812263
+                        linkStyle 64 stroke:#812263
+                        linkStyle 65 stroke:#733A30
+                        linkStyle 66 stroke:#0000FF
+                        linkStyle 67 stroke:#D689A2
+                        linkStyle 68 stroke:#63CA9A
+                        linkStyle 69 stroke:#00FFFF
+                        linkStyle 70 stroke:#63CA9A
+                        linkStyle 71 stroke:#D689A2
+                        linkStyle 72 stroke:#D689A2
+                        linkStyle 73 stroke:#D689A2
+                        linkStyle 74 stroke:#D689A2
+                        linkStyle 75 stroke:#0000FF
+                        linkStyle 76 stroke:#63CA9A
+                        linkStyle 77 stroke:#0000FF
+                        linkStyle 78 stroke:#FFFF00
+                        linkStyle 79 stroke:#000080
+                        linkStyle 80 stroke:#000080
+                        linkStyle 81 stroke:#000080
+                        linkStyle 82 stroke:#000080
+                        linkStyle 83 stroke:#EDDB12
+                        linkStyle 84 stroke:#EDDB12
+                        linkStyle 85 stroke:#EDDB12
+                        linkStyle 86 stroke:#EDDB12
+                        linkStyle 87 stroke:#800080
+                        linkStyle 88 stroke:#800080
+                        
                 </pre>
             </section>
         </div>
