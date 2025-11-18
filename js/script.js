@@ -127,7 +127,8 @@ const CODEX_DATA = {
             "Religion": {
                 type: "folder",
                 children: {
-                    "Gladia Church": { type: "link", href: "html/culture/religion/gladia-church.html" },
+                    "Gladian Church": { type: "link", href: "html/culture/religion/gladian-church.html" },
+                    "Solar Faith": { type: "link", href: "html/culture/religion/solar-faith.html" },
                 }
             }
         }
