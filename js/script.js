@@ -121,6 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     Data Tree
     ----------------------------------------- */
 const CODEX_DATA = {
+    "Culture": {
+        type: "folder",
+        children: {
+            "Religion": {
+                type: "folder",
+                children: {
+                    "Gladia Church": { type: "link", href: "html/culture/religion/gladia-church.html" },
+                }
+            }
+        }
+    },
     "Geo & Org": {
         type: "folder",
         children: {
@@ -138,7 +149,7 @@ const CODEX_DATA = {
                                 type: "folder",
                                 children: {}
                             },
-                            "Hestein Empire": { type: "link", href: "html/eusacix/hestein-empire.html" }
+                            "Hestein Empire": { type: "link", href: "html/georg/eusacix/hestein-empire.html" }
                         }
                     },
                 }
