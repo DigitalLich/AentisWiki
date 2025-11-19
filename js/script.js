@@ -127,8 +127,8 @@ const CODEX_DATA = {
             "Religion": {
                 type: "folder",
                 children: {
-                    "Gladian Church": { type: "link", href: "html/culture/religion/gladian-church.html" },
-                    "Solar Faith": { type: "link", href: "html/culture/religion/solar-faith.html" },
+                    "Gladian Church": { type: "link", href: "/html/culture/religion/gladian-church.html" },
+                    "Solar Faith": { type: "link", href: "/html/culture/religion/solar-faith.html" },
                 }
             }
         }
@@ -150,18 +150,18 @@ const CODEX_DATA = {
                                 type: "folder",
                                 children: {}
                             },
-                            "Hestein Empire": { type: "link", href: "html/georg/eusacix/hestein-empire.html" }
+                            "Hestein Empire": { type: "link", href: "/html/georg/eusacix/hestein-empire.html" }
                         }
                     },
                 }
             },
-            "Continents": { type: "link", href: "continents.html" }
+            "Continents": { type: "link", href: "/continents.html" }
         }
     },
     "Data": {
         type: "folder",
         children: {
-            "Calendar": { type: "link", href: "html/data/calendar.html" },
+            "Calendar": { type: "link", href: "/html/data/calendar.html" },
         }
     },
     "Author's Notes": {
@@ -170,13 +170,13 @@ const CODEX_DATA = {
             "Blog": {
                 type: "folder",
                 children: {
-                    "Reading Fantasy Genre": { type: "link", href: "html/blog/reading-fantasy-genre.html" },
+                    "Reading Fantasy Genre": { type: "link", href: "/html/blog/reading-fantasy-genre.html" },
                 }
             },
-            "About": { type: "link", href: "about.html" }
+            "About": { type: "link", href: "/about.html" }
         }
     },
-    "Welcome": { type: "link", href: "index.html" }
+    "Welcome": { type: "link", href: "/index.html" }
 };
 
 /*  -----------------------------------------
