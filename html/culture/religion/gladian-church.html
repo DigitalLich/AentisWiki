@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>The Church of Gladia</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+
+            <section class="col4">
+                <h2>The Gladian Church</h2>
+                <p>
+                    The Gladian Church or Church of Gladia is a local Hestein religion. It originated in the North of the 
+                    <a href=html/georg/eusacix/hestein-empire.html>Hestein Empire</a> through "The Great Stabilization." 
+                    The Gladia Church influence is enormous among the aristocrats. The fundamental values of the church coordinate so well with the nobility's values that some 
+                    noble families participate directly on the church. The religion centers around 4 deities, which they believe are the symbol of noblesse. 
+                    These deities are Dhoven, Evmus, Knoqia and Nuria.
+                </p>
+            </section>
+
+            <section class="col4">
+                <h3>Structure</h3>
+                <p> The Gladian Church has a dual title system divided by Commoners and Noblesse. The commoners that join the church are committed to the church
+                    and usually stay with the church for the rest of their lives while the Nobles that join could join or only stay affiliated with the church.
+                    This political structure is shown in the following hierarchy:
+                </p>
+                <pre class="mermaid">
+                    flowchart TD
+                        id1(Altumlus) --> id2(Synod Decanus)
+                        id2 --> id4(Decanus)
+                        id4 --> id5(Rector)
+                        id5 --> id6(Provost)
+                        id6 --> id7(Gladia Priesthood)
+                        id1 --> id3(Assembly Optimas)
+                        id3 --> id8(Optimas)
+                        id8 --> id9(Pharon)
+                        id9 --> id10(Ghensus)
+                        id10 --> id11(Nobilis)
+                </pre>
+            </section>
+
+            <section class="col4">
+                <h2>Tenets of Faith</h2>
+                <p>
+                    While there are many regulations, rituals, and traditions, every single one origins from the <strong>"Core Tenents"</strong>. This Core Tenets are only 16 
+                    in number. Anyone who considers itself a follower of the Gladia Church follows this fundamental principles.
+                </p>
+                <h3>A. Knowledge and Royalty</h3>
+                <p>
+                    A:A One must respect the aristocratic sovereignty for it is a divine gift. <br/>
+                    A:B One must not permit any kind of corruption in their noble home. <br/>
+                    A:C One should thrive in the knowledge of their ancestors and their history. <br/>
+                    A:D One should always seek guideness in the accomplishments of its house.
+                </p>
+                <h3>B. Honor and Proudness</h3>
+                <p>
+                    B:A One should maintain itself civil as much as possible as it is a way to maintain one's honor. <br/>
+                    B:B One should not break an oath in name of their house. <br/>
+                    B:C One must respect a pact of antiquity as it is sealed under the name of the gods. <br/>
+                    B:D One should not tolerate a spark of shame under its name.
+                </p>
+                <h3>C. Charisma and Cleverness</h3>
+                <p>
+                    C:A One must flourish in the way of the tongue as if the gods were speaking. <br/>
+                    C:B One should master the way of kinesics as it is the path to understanding. <br/>
+                    C:C One should try its best to decipher and anticipate the information of their opponent. <br/>
+                    C:D One must comprehend the skills to become wiser with every piece of knowledge acquired.
+                </p>
+                <h3>D. Mercy and Punishment</h3>
+                <p>
+                    D:A One should always serve a punishment honorable of the act of malice. <br/>
+                    D:B One should always serve an act of kindness equal or more of the act of benevolence. <br/>
+                    D:C One should balance their judgement of another between their acts of goodness and wickedness. <br/>
+                    D:D One should always do the Misehena Rite at the time of given a verdict of mercy or punishment. 
+                </p>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div>
+                <img
+                src="assets/symbols/TheGladiaChurchSymbol.webp"
+                alt="The Gladian Church Symbol"/>
+            </div>
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>Demonym:</strong> Gladians 
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founding Date:</strong> 470 EE
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founder:</strong> ______
+                    </li>
+                    <li class="fact-group">
+                        <strong>Current Leader:</strong> ______
+                    </li>
+                    <li class="fact-group">
+                        <strong>Leader Title:</strong> Altumlus
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 AentisWiki. All rights reserved.</p>
+</footer>

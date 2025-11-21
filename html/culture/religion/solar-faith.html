@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>The Faith of Sole</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+
+            <section class="col4">
+                <h2>The Solar Faith</h2>
+                <p>
+                    The Solar Faith or The Faith of Sole is a local Hestein religion. It originated in the south of the
+                    <a href=html/georg/eusacix/hestein-empire.html>Hestein Empire</a>. It spread throughout the north when the Empire sought expansion in the south. 
+                    The Solar Fate influence is enormous among the hardworking people, peasants. The fundamental values of the faith coordinate so well with the peasants' 
+                    values. Almost as if the religion's point is to empower the working class. The religion centers around 4 deities,, which they believe are the purest 
+                    of every other god. These deities are Dhoven, Axmus, Khuxbus and Lucette.
+                </p>
+            </section>
+
+            <section class="col4">
+                <h3>Structure</h3>
+                <p> The Gladian Church has a dual title system divided by The Liturgy and The Militia. This political structure is shown in the following hierarchy:
+                </p>
+                <pre class="mermaid">
+                    flowchart TD
+                        id1(Pontiff) --> id2(Council Cardentis)
+                        id2 --> id4(Cardentis)
+                        id4 --> id5(Archbishop)
+                        id5 --> id6(Bishop)
+                        id6 --> id7(Solar Priesthood)
+                        id2 --> id3(Villidiqus)
+                        id3 --> id8(Vadduos)
+                        id8 --> id9(Virttus)
+                        id9 --> id10(Voross)
+                </pre>
+            </section>
+
+            <section class="col4">
+                <h2>Tenets of Faith</h2>
+                <p>
+                    While there are many regulations, rituals, and traditions, every single one origins from the <strong>"Core Tenents"</strong>. This Core Tenets are only 16 
+                    in number. Anyone who considers itself a follower of the Solar Faith follows this fundamental principles.
+                </p>
+                <h3>A. Nature and Knowledge</h3>
+                <p>
+                    A:A One should never abuse the force of nature.<br/>
+                    A:B One should value nature as it was gifted by the gods to all creation.<br/>
+                    A:C One should respect its life as well as others as its nature in itself.<br/>
+                    A:D One should reciprocate what the world has given.
+                </p>
+                <h3>B. Labor and Rest</h3>
+                <p>
+                    B:A One should always try to be the image of hard-working person.<br/>
+                    B:B One should be the image of perseverance.<br/>
+                    B:C One must rest the same amount of what one works.<br/>
+                    B:D One must feast its fatigue.
+                </p>
+                <h3>C. Justice and Light</h3>
+                <p>
+                    C:A One should maintain itself pure in its principles of morality.<br/>
+                    C:B One must protect those who are weak from the wicked.<br/>
+                    C:C One must have a lighted candle that vigils their house at night.<br/>
+                    C:D One should follow the divine law as it is divine and just.
+                </p>
+                <h3>D. Humility and Gratefulness</h3>
+                <p>
+                    D:A One should maintain itself humble as it is the path to paradise.<br/>
+                    D:B One should greed someone's else determination, but never the products of other's determination.<br/>
+                    D:C One must pray once a week as its the way to thank the deities.<br/>
+                    D:D One should meditate the origins of the daily gifts received and be thankful.
+                </p>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div>
+                <img
+                src="assets/symbols/TheSolarFaithSymbol.webp"
+                alt="The Gladian Church Symbol"/>
+            </div>
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>Demonym:</strong> Solers
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founding Date:</strong> 15 EE
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founder:</strong> ______
+                    </li>
+                    <li class="fact-group">
+                        <strong>Current Leader:</strong> ______
+                    </li>
+                    <li class="fact-group">
+                        <strong>Leader Title:</strong> Pontiff
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 AentisWiki. All rights reserved.</p>
+</footer>

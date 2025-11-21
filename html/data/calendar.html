@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/calendar.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Calendar</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+
+            <section class="col4 calendar">
+                <h2>Deidal Calendar</h2>
+
+                <div class="calendar-header">
+                    <button id="prev-month">⟨</button>
+                    <div id="month-year-display">
+                        <span id="month-name"></span>
+                        <span id="year-display">750 EE</span>
+                    </div>
+                    <button id="next-month">⟩</button>
+                </div>
+
+                <!-- Popup (must be inside calendar section) -->
+                <div id="month-year-popup" class="popup hidden">
+                    <div class="popup-header">
+                        <button id="prev-year">⟨</button>
+                        <span id="popup-year-label">750 EE</span>
+                        <button id="next-year">⟩</button>
+                    </div>
+                    <div id="month-grid" class="month-grid"></div>
+                </div>
+
+                <div id="season-name" class="season-name"></div>
+                <div class="calendar-grid" id="calendar-grid"></div>
+            </section>
+
+
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>Calendar Fun Facts</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>Days in a Year:</strong> 440
+                    </li>
+                    <li class="fact-group">
+                        <strong>Months:</strong> 11
+                    </li>
+                    <li class="fact-group">
+                        <strong>Seasons:</strong>
+                        <ul>
+                            <li>Jenous (Season of Blossom)</li>
+                            <li>Maethur (Season of Heat)</li>
+                            <li>Sindder (Season of Ashes)</li>
+                            <li>Laghor (Season of Mist and Wither)</li>
+                            <li>Hobttus (Season of Snow)</li>
+                        </ul>
+                    </li>
+                    <li class="fact-group">
+                        <strong>Eras:</strong>
+                        <ul>
+                            <li>Era of Origin (EO)</li>
+                            <li>Era of Chaos (EC)</li>
+                            <li>Era of Ashes (EA)</li>
+                            <li>Era of Equilibrium (EE)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 AentisWiki. All rights reserved.</p>
+</footer>

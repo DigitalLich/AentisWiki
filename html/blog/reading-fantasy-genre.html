@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <iMG src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Reading Fantasy Genre</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+            <section class="col4">
+                <h2>The Purpose</h2>
+                <p>
+                    I was watching a Youtube <a href="https://www.youtube.com/watch?v=T0G-yYbqpNc" target="_blank">video</a> from Daniel Greene where he comes
+                    out with the best way to find your niche in the Fantasy Genre. I watched the entire video and like it a lot for several reasons.
+                    One of them is, well, the Recommendation, of course. But more importantly, the diferent ramifications that he goes from book to book.
+                    The only problem I had with it was that I couldn't zoom in on the diagram he wrote in his whiteboard, and he's instagram post wasn't good enough for me.
+                    So, I decided to recreate the entire thing by myself with code. I added the pretty colors, arrow comments, zoom functionality. And, It was done after two days
+                    of repeating the video again and again. <br>
+                    Now, I have leave the thing mostly as original as it was, but I most likely will add more books and more niche subgenres at some point. Maybe... <br>
+                    Will see what happens.
+                </p>
+            </section>
+            <section class="col4">
+                <h3>The Graph</h3>
+                <p> You should obviously start at the Hobbit like Daniel Greene did, and guide yourself by the comments and the legend at the top. <br>
+                    Enjoy:</p>
+                <div class="toolbar">
+                    <button id="btn-zoom-in" aria-label="Zoom in">+</button>
+
+                    <label for="zoom-level" class="sr-only">Zoom level</label>
+                    <select id="zoom-level" aria-label="Zoom level">
+                        <option value="0.75">75%</option>
+                        <option value="1" selected>100%</option>
+                        <option value="2">200%</option>
+                        <option value="3">300%</option>
+                    </select>
+
+                    <button id="btn-zoom-out" aria-label="Zoom out">−</button>
+                </div>
+                <pre class="mermaid">
+                flowchart LR
+                    subgraph Graph
+                    direction LR
+                    Hb(Hobbit) --Less S&S--> GC(Golden Compass)
+                        GC --Real World--> TheM(The Magicians)
+                            TheM --More--> DF[\Dresden Files/]
+                                DF --More--> UF([Urban Fantasy])
+                                    UF --Rec--> AB{{Anita Blake}}
+                        GC --Adult--> PSS(Perdido Street Station)
+                            PSS --Epic--> GBS[\Green Bone Saga/]
+                                GBS --More--> BE[\Broken Earth/]
+                                    BE --More--> UE([Urban Epics])
+                                GBS --Darker--> DT[\Dark Tower/]
+                                    DT --More--> DUE([Dark Urban Epics])
+                                    DT --Less Epic--> PS(Pet Sematary)
+                                        PS --More--> FH([Fantasy Horror])
+                                            FH --Rec--> SWTWC{{Something Wicked This Way Comes}}
+                                        PS --Less Horror--> GTN(Gideon the Ninth)
+                                            GTN --Alt--> AF([Alt Fantasy])
+                                GBS --Less Epic--> DR(Divine Rivals)
+                                    DR --Alt--> MG(Middlegame)
+                                        MG --More--> AF
+                                            AF --Rec--> LaMC{{Library at Mount Char}}
+                                    DR --Romance--> UR
+                            PSS --Sci-Fi--> SCF([Science Fiction Fantasy])
+                            PSS --Weird--> NW([New Weird])
+                        GC --Academia--> NH(Ninth House)
+                            NH --More--> ADE(A Deadly Education)
+                                ADE --Romance--> MB(Magic Bites)
+                                    MB --More--> UR([Urban Romantasy])
+                                ADE --More--> DA([Dark Academia])
+                                    DA --Rec--> BoB{{Blood over Brighthaven}}
+                            NH -.Lustier.-> DF
+                    Hb --Beauty--> WoES(Wizard of Earthsea)
+                        WoES --Darker--> TDBC(The Dragonbone Chair)
+                            TDBC --Transitional--> EotW(Eye of the World)
+                                EotW --Modern--> WotM(Will of the Many)
+                                    WotM --Modern--> BS[/Brandon Sanderson\]
+                                        BS --More--> MF([Modern Fantasy])
+                                            MF --Rec--> Oe{{Orconomics}}
+                            TDBC --Darker--> GoT(Game of Thrones)
+                                GoT --Modern--> WotM
+                                GoT --Less S&S--> TBI(The Blade Itself)
+                                    TBI --Darker--> BC(Black Company)
+                                        BC --Darker--> GD([Grim Dark])
+                                            GD --Rec--> B[/Berserk/]
+                                GoT --Higher--> EoM(Elric of Melniboné)
+                                    EoM --Higher--> Mz[\Malazan/]
+                                        Mz --> DE([Dark Epics])
+                                            DE --High--> DD[\Dandelion Dynasty/]
+                                            DE --Modern--> EotV{{Empire of the Vampire}}
+                                                EotV -.Punker.-> GTN
+                                            DE -.Transitional..-> TBI
+                                            DE -.Transitional..-> KD
+                                            DE -.Transitional..-> BC
+                                            DE -.Transitional..-> SoWWL
+                                    EoM --> TW[\The Witcher/]
+                                    EoM <-.Transitional.-> EotW
+                                    EoM -.-> TDBC
+                                    EoM -.Darker.-> BC
+                                GoT --Sexier--> KD(Kushiel's Dart)
+                                    KD --More--> R([Romantasy])
+                                        R --Rec--> ACOTAR{{A Court of Thorns and Roses}}
+                                GoT -.Transitional.-> DD
+                            TDBC --Less Epic--> M(Mistborn)
+                                M --Hard Magic--> SoWWL(Shadow of What Was Lost)
+                                    SoWWL --More--> BP(Black Prism)
+                                        BP --More--> HM([Hard Magic])
+                                M --More Changelling--> EoM
+                                M -.More Epic.-> EotW
+                                M -.Cozier.-> LnL
+                                M -.Rabbit Hole.-> C[\Cosmere/]
+                        WoES --Escapism--> SG(Small Gods)
+                            SG --Less Comedy--> M
+                            SG --Classic Light--> CoN[\Chronicles of Narnia/]
+                                CoN --Cozy--> LnL(Legends & Lattes)
+                                    LnL --Cozier--> HinCS(House in the Cerulean Sea)
+                                        HinCS --Cozier--> CZ([Cozy Fantasy])
+                                CoN --Less Light--> M
+                                CoN --Complexity--> OK[\The Old Kingdom/]
+                                    OK --Epic--> SoA(Song of Achilles)
+                                    OK --> GC2(Golden Compass)
+                                    OK --Weird--> AIW([Alice in Wonderland])
+                                        AIW --More--> LP(The Little Prince)
+                                            LP --More--> SF([Strange Fantasy])
+                                                SF --Rec--> P{{Piranesi}}
+                                    OK --YA--> SoC(Six of Crows)
+                                        SoC --More--> E(Eragon)
+                                            E --Curse of Endless Choices--> YA([YA])
+                                                YA -.Transitional.-> SoA
+                                    OK --Fairy--> TLU(The Last Unicorn)
+                                        TLU --More--> F([Fairytail])
+                        end
+                        
+                        subgraph Legend
+                        direction LR
+                        Bo(Books) --- Se[\Series/] 
+                        Se --- Ge([Genre])
+                        Ge --- Re{{Recommendation}}
+                        Re --- Au[/Author\]
+                        Au --- Ma[/Manga/]
+                        end
+
+                        %% Links
+                        click Hb "https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again" _blank
+                        click GC "https://www.goodreads.com/book/show/119322.The_Golden_Compass" _blank
+                        click GC2 "https://www.goodreads.com/book/show/119322.The_Golden_Compass" _blank
+                        click TheM "https://www.goodreads.com/book/show/6101718-the-magicians" _blank
+                        click DF "https://www.goodreads.com/series/40346-the-dresden-files" _blank
+                        click AB "https://www.goodreads.com/series/49083-anita-blake-vampire-hunter" _blank
+                        click PSS "https://www.goodreads.com/book/show/68494.Perdido_Street_Station?ac=1&from_search=true&qid=jnIwRI9EwS&rank=1" _blank
+                        click GBS "https://www.goodreads.com/series/216281-the-green-bone-saga" _blank
+                        click BE "https://www.goodreads.com/series/112296-the-broken-earth" _blank
+                        click DT "https://www.goodreads.com/series/40750-the-dark-tower" _blank
+                        click PS "https://www.goodreads.com/book/show/22047048" _blank
+                        click SWTWC "https://www.goodreads.com/book/show/248596.Something_Wicked_This_Way_Comes" _blank
+                        click GTN "https://www.goodreads.com/book/show/42036538-gideon-the-ninth" _blank
+                        click DR "https://www.goodreads.com/book/show/60784546-divine-rivals" _blank
+                        click MG "https://www.goodreads.com/book/show/35965482-middlegame" _blank
+                        click LaMC "https://www.goodreads.com/book/show/26892110-the-library-at-mount-char" _blank
+                        click NH "https://www.goodreads.com/book/show/43263680-ninth-house" _blank
+                        click ADE "https://www.goodreads.com/book/show/50548197-a-deadly-education" _blank
+                        click MB "https://www.goodreads.com/book/show/54743964-magic-bites" _blank
+                        click BoB "https://www.goodreads.com/book/show/208430658-blood-over-bright-haven" _blank
+                        click WoES "https://www.goodreads.com/book/show/13642.A_Wizard_of_Earthsea" _blank
+                        click TDBC "https://www.goodreads.com/book/show/91981.The_Dragonbone_Chair" _blank
+                        click EotW "https://www.goodreads.com/book/show/228665.The_Eye_of_the_World" _blank
+                        click WotM "https://www.goodreads.com/book/show/58416952-the-will-of-the-many" _blank
+                        click BS "https://www.goodreads.com/author/show/38550.Brandon_Sanderson" _blank
+                        click Oe "https://www.goodreads.com/book/show/25326486-orconomics" _blank
+                        click GoT "https://www.goodreads.com/book/show/13496.A_Game_of_Thrones" _blank
+                        click TBI "https://www.goodreads.com/book/show/944073.The_Blade_Itself" _blank
+                        click BC "https://www.goodreads.com/book/show/140671.The_Black_Company" _blank
+                        click B "https://myanimelist.net/manga/2/Berserk" _blank
+                        click EoM "https://www.goodreads.com/book/show/30036.Elric_of_Melnibone" _blank
+                        click Mz "https://www.goodreads.com/series/43493-malazan-book-of-the-fallen" _blank
+                        click DD "https://www.goodreads.com/series/117103-the-dandelion-dynasty" _blank
+                        click EotV "https://www.goodreads.com/book/show/56269205-empire-of-the-vampire" _blank
+                        click TW "https://www.goodreads.com/series/40911-the-witcher" _blank
+                        click KD "https://www.goodreads.com/book/show/153008.Kushiel_s_Dart" _blank
+                        click ACOTAR "https://www.goodreads.com/book/show/50659467-a-court-of-thorns-and-roses" _blank
+                        click M "https://www.goodreads.com/book/show/68428.Mistborn" _blank
+                        click C "https://www.goodreads.com/series/135117-the-cosmere" _blank
+                        click SoWWL "https://www.goodreads.com/book/show/22878967-the-shadow-of-what-was-lost" _blank
+                        click BP "https://www.goodreads.com/book/show/7165300-the-black-prism" _blank
+                        click SG "https://www.goodreads.com/book/show/34484.Small_Gods" _blank
+                        click CoN "https://www.goodreads.com/series/49073-the-chronicles-of-narnia-publication-order" _blank
+                        click LnL "https://www.goodreads.com/book/show/61242426-legends-lattes" _blank
+                        click HinCS "https://www.goodreads.com/book/show/45047384-the-house-in-the-cerulean-sea" _blank
+                        click OK "https://www.goodreads.com/series/44888-abhorsen" _blank
+                        click SoA "https://www.goodreads.com/book/show/13623848-the-song-of-achilles" _blank
+                        click AIW "https://www.goodreads.com/book/show/60671823-alice-s-adventures-in-wonderland" _blank
+                        click LP "https://www.goodreads.com/book/show/157993.The_Little_Prince" _blank
+                        click P "https://www.goodreads.com/book/show/50202953-piranesi" _blank
+                        click SoC "https://www.goodreads.com/book/show/23437156-six-of-crows" _blank
+                        click E "https://www.goodreads.com/book/show/113436.Eragon" _blank
+                        click TLU "https://www.goodreads.com/book/show/195134846-the-last-unicorn" _blank
+
+                        %% Classes
+                        classDef Default stroke:#63CA9A
+                        classDef Academia stroke:#4445C7
+                        classDef Adult stroke:#A13030
+                        classDef Alt stroke:#723E31
+                        classDef Beauty stroke:#00FF00
+                        classDef Cozy stroke:#D689A2
+                        classDef Dark stroke:#808000
+                        classDef Epic stroke:#0000FF
+                        classDef LessEpic stroke:#008080
+                        classDef Fairy stroke:#800080
+                        classDef HardMagic stroke:#812263
+                        classDef High stroke:#733A30
+                        classDef Modern stroke:#FFA500
+                        classDef Real stroke:#008000
+                        classDef Romance stroke:#800000
+                        classDef LessSnS stroke:#FFFF00
+                        classDef Transitional stroke:#00FFFF
+                        classDef Weird stroke:#000080
+                        classDef YA stroke:#EDDB12
+
+                        %% Node Styles
+                        Hb:::Default
+                        GTN:::Default
+                        OK:::Default
+                        M:::Default
+                        C:::Default
+
+                        GC:::LessSnS
+                        GC2:::LessSnS
+                        WoES:::Beauty
+                        EotW:::Transitional
+                        SG:::Transitional
+                        
+                        GBS:::Epic
+                        BE:::Epic
+                        UE:::Epic
+                        SoA:::Epic
+                        DR:::LessEpic
+
+                        DT:::Dark
+                        DUE:::Dark
+                        PS:::Dark
+                        FH:::Dark
+                        SWTWC:::Dark
+                        TDBC:::Dark
+                        GoT:::Dark
+                        TBI:::Dark
+                        BC:::Dark
+                        GD:::Dark
+                        B:::Dark
+
+                        MG:::Alt
+                        AF:::Alt
+                        LaMC:::Alt
+                        
+                        TheM:::Real
+                        DF:::Real
+                        UF:::Real
+                        AB:::Real
+
+                        PSS:::Adult
+                        SCF:::Adult
+                        NW:::Adult
+
+                        NH:::Academia
+                        ADE:::Academia
+                        DA:::Academia
+                        BoB:::Academia
+
+                        MB:::Romance
+                        UR:::Romance
+                        KD:::Romance
+                        R:::Romance
+                        ACOTAR:::Romance
+
+                        SoWWL:::HardMagic
+                        BP:::HardMagic
+                        HM:::HardMagic
+
+                        WotM:::Modern
+                        BS:::Modern
+                        MF:::Modern
+                        Oe:::Modern
+
+                        EoM:::High
+                        TW:::High
+                        Mz:::High
+                        DE:::High
+                        DD:::High
+                        EotV:::High
+
+
+                        CoN:::Cozy
+                        LnL:::Cozy
+                        HinCS:::Cozy
+                        CZ:::Cozy
+
+                        AIW:::Weird
+                        LP:::Weird
+                        SF:::Weird
+                        P:::Weird
+
+                        SoC:::YA
+                        E:::YA
+                        YA:::YA
+
+                        TLU:::Fairy
+                        F:::Fairy
+
+                        %% Subgraphs Styles
+                        style Graph fill:#5C5C5C
+                        style Legend fill:#5C5C5C
+
+                        %% Link Styles
+                        linkStyle 0 stroke:#FFFF00
+                        linkStyle 1 stroke:#008000
+                        linkStyle 2 stroke:#008000
+                        linkStyle 3 stroke:#008000
+                        linkStyle 4 stroke:#008000
+                        linkStyle 5 stroke:#A13030
+                        linkStyle 6 stroke:#0000FF
+                        linkStyle 7 stroke:#0000FF
+                        linkStyle 8 stroke:#0000FF
+                        linkStyle 9 stroke:#808000
+                        linkStyle 10 stroke:#808000
+                        linkStyle 11 stroke:#808000
+                        linkStyle 12 stroke:#808000
+                        linkStyle 13 stroke:#808000
+                        linkStyle 14 stroke:#63CA9A
+                        linkStyle 15 stroke:#723E31
+                        linkStyle 16 stroke:#008080
+                        linkStyle 17 stroke:#723E31
+                        linkStyle 18 stroke:#723E31
+                        linkStyle 19 stroke:#723E31
+                        linkStyle 20 stroke:#800000
+                        linkStyle 21 stroke:#A13030
+                        linkStyle 22 stroke:#A13030
+                        linkStyle 23 stroke:#4445C7
+                        linkStyle 24 stroke:#4445C7
+                        linkStyle 25 stroke:#800000
+                        linkStyle 26 stroke:#800000
+                        linkStyle 27 stroke:#4445C7
+                        linkStyle 28 stroke:#4445C7
+                        linkStyle 29 stroke:#800000
+                                    %%Half-Way
+                        linkStyle 30 stroke:#00FF00
+                        linkStyle 31 stroke:#808000
+                        linkStyle 32 stroke:#00FFFF
+                        linkStyle 33 stroke:#FFA500
+                        linkStyle 34 stroke:#FFA500
+                        linkStyle 35 stroke:#FFA500
+                        linkStyle 36 stroke:#FFA500
+                        linkStyle 37 stroke:#808000
+                        linkStyle 38 stroke:#FFA500
+                        linkStyle 39 stroke:#808000
+                        linkStyle 40 stroke:#808000
+                        linkStyle 41 stroke:#808000
+                        linkStyle 42 stroke:#808000
+                        linkStyle 43 stroke:#733A30
+                        linkStyle 44 stroke:#733A30
+                        linkStyle 45 stroke:#733A30
+                        linkStyle 46 stroke:#733A30
+                        linkStyle 47 stroke:#733A30
+                        linkStyle 48 stroke:#733A30
+                        linkStyle 49 stroke:#733A30
+                        linkStyle 50 stroke:#733A30
+                        linkStyle 51 stroke:#733A30
+                        linkStyle 52 stroke:#733A30
+                        linkStyle 53 stroke:#733A30
+                        linkStyle 54 stroke:#00FFFF
+                        linkStyle 55 stroke:#808000
+                        linkStyle 56 stroke:#808000
+                        linkStyle 57 stroke:#800000
+                        linkStyle 58 stroke:#800000
+                        linkStyle 59 stroke:#800000
+                        linkStyle 60 stroke:#63CA9A
+                        linkStyle 61 stroke:#008080
+                        linkStyle 62 stroke:#812263
+                        linkStyle 63 stroke:#812263
+                        linkStyle 64 stroke:#812263
+                        linkStyle 65 stroke:#733A30
+                        linkStyle 66 stroke:#0000FF
+                        linkStyle 67 stroke:#D689A2
+                        linkStyle 68 stroke:#63CA9A
+                        linkStyle 69 stroke:#00FFFF
+                        linkStyle 70 stroke:#63CA9A
+                        linkStyle 71 stroke:#D689A2
+                        linkStyle 72 stroke:#D689A2
+                        linkStyle 73 stroke:#D689A2
+                        linkStyle 74 stroke:#D689A2
+                        linkStyle 75 stroke:#0000FF
+                        linkStyle 76 stroke:#63CA9A
+                        linkStyle 77 stroke:#0000FF
+                        linkStyle 78 stroke:#FFFF00
+                        linkStyle 79 stroke:#000080
+                        linkStyle 80 stroke:#000080
+                        linkStyle 81 stroke:#000080
+                        linkStyle 82 stroke:#000080
+                        linkStyle 83 stroke:#EDDB12
+                        linkStyle 84 stroke:#EDDB12
+                        linkStyle 85 stroke:#EDDB12
+                        linkStyle 86 stroke:#EDDB12
+                        linkStyle 87 stroke:#800080
+                        linkStyle 88 stroke:#800080
+                        
+                </pre>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>Blog Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>Author:</strong> DigitalLich
+                    </li>
+                    <li class="fact-group">
+                        <strong>Date:</strong> 11/6/2025
+                    </li>
+                    <li class="fact-group">
+                        <strong>Blog</strong> #1
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 AentisWiki. All rights reserved.</p>
+</footer>

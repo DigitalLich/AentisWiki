@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aentis</title>
+
+    <script>
+        const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+        if (isLocal) {
+        document.write('<base href="/">');
+        } else {
+        document.write('<base href="/">');
+        }
+    </script>
+
+    <link rel="icon" type="image/ico" href="assets/ico/AentisLogo.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="js/script.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/ico/AentisLogov2T.png" alt="Aentis Logo"/>
+            </a>
+        </div>
+        <div class="title">
+            <h1>Hestein Empire</h1>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!--Sidebar-->
+        <aside class="left-sidebar">
+            <div class="search-box">
+                <input id="codex-search-input" type="text" placeholder="Search Aentis..." />
+            </div>
+            <nav id="codex" aria-label="World Codex">
+                <div id="codex-breadcrumb" class="breadcrumb" aria-live="polite"></div>
+                <ul id="codex-list" class="codex-list" role="list"></ul>
+            </nav>
+        </aside>
+        <!--Main Content-->
+        <div class="right-content">
+
+            <section class="col4">
+                <h2>Hestein</h2>
+                <p>
+                    The Hestein Empire is a relative new nation formed with 350 years of history. It was founded by Oswin Hestein also known as The Father Founder.
+                    This nation is divided in two regions, the northern region is known as Hesteinese Region, the southern region is known as the Lhumigian Region,
+                    and two special regions.
+                    And futhermore, each region is divided in several duchies.<br/> <br/>
+                </p>
+            </section>
+
+            <section class="col2">
+                <h3>Duchies of the Hesteinese Region</h3>
+                <ol>
+                    <li>Duchy of Roseward</li>
+                    <li>Duchy of Wheattalon</li>
+                    <li>Duchy of Hartridge</li>
+                    <li>Duchy of Fallenoak</li>
+                </ol>
+                <h3>Duchies of the Lhumigian Region</h3>
+                <ol start="5">
+                    <li>Duchy of Spiderhorn</li>
+                    <li>Duchy of Amberguard</li>
+                    <li>Duchy of Timberborne</li>
+                    <li>Duchy of Stonedall</li>
+                    
+                </ol>
+                <h3>Special Regions</h3>
+                <ol start="9">
+                    <li>Matuk Principality</li>
+                    <li>Ulafir Principality</li>
+                </ol>
+            </section>
+
+            <section class="col2 map-card">
+                <figure>
+                    <a href="map-view.html?map=HesteinEmpire.webp">
+                        <img src="assets/thumbnail/HesteinEmpireTN.webp" alt="Hestein Empire Map" class="map-thumb"/>
+                    </a>
+                    <figcaption>Hestein Empire Map</figcaption>
+                </figure>
+            </section>
+
+            <section class="col4">
+                <h3>Structure</h3>
+                <p> Hestein has a political system called Henerschy. This political structure is divided in the following hierarchy:</p>
+                <pre class="mermaid">
+                flowchart TD
+                    id4(Duke) --> id3
+                    id1(Emperor) ---> id2(Empress)
+                    id1 --> id3
+                    id1 --> id4
+                    id2 --> id3(Royal Council)
+                    id16(Royal Elder) --> id3
+                    id5(Savalh) --> id3
+                    id10(High Elder) --> id5
+                    id13(High Orc King) --> id5
+                    id3 --> id6
+                    id5 --> id14
+                    id3 --> id11(Elycir)
+                    id3 --> id14(High Chief)
+                    id4 --> id6(Counts)
+                    id6 --> id7(Barons)
+                    id7 --> id8(Baronets)
+                    id8 --> id9(Knights)
+                    id5 --> id11
+                    id11 --> id12(Eldar)
+                    id14 --> id15(Lesser Chief)
+
+                    %% clickable internal links
+                    click id1 "javascript:void(0)" "View Emperor"
+                    click id2 "javascript:void(0)" "View Empress"
+                    click id3 "javascript:void(0)" "Royal Council"
+                    click id4 "javascript:void(0)" "Dukes of the Realm"
+                    click id5 "javascript:void(0)" "Learn about Savalh"
+                    click id6 "javascript:void(0)" "View Counts"
+                    click id7 "javascript:void(0)" "View Barons"
+                    click id8 "javascript:void(0)" "View Baronets"
+                    click id9 "javascript:void(0)" "View Knights"
+                    click id10 "javascript:void(0)" "View High Elder"
+                    click id11 "javascript:void(0)" "View Elycir"
+                    click id12 "javascript:void(0)" "View Eldar"
+                    click id13 "javascript:void(0)" "View High Orc King"
+                    click id14 "javascript:void(0)" "View High Chief"
+                    click id15 "javascript:void(0)" "View Lesser Chief"
+                    click id16 "javascript:void(0)" "View Royal Elder"
+                </pre>
+            </section>
+        </div>
+        <!--Fact Sheet-->
+        <div class="article-image">
+            <div class="fact-sheet">
+                <h3>World Statistics</h3>
+                <ul>
+                    <li class="fact-group">
+                        <strong>Leader:</strong> Allen II Hestein
+                    </li>
+                    <li class="fact-group">
+                        <strong>Leader Title:</strong> Emperor
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founder:</strong> Oswin Hestein
+                    </li>
+                    <li class="fact-group">
+                        <strong>Official State Religion:</strong> <br/> Gladia Church
+                    </li>
+                    <li class="fact-group">
+                        <strong>Secondary Religions:</strong> <br/> Solar Faith, Zenith Temple
+                    </li>
+                    <li class="fact-group">
+                        <strong>Government:</strong> Henerschy
+                    </li>
+                    <li class="fact-group">
+                        <strong>Capital:</strong> Roseward
+                    </li>
+                    <li class="fact-group">
+                        <strong>Main Population:</strong> Humans (Hatteinans and Lhumigians), Orcs, Hobgoblins, Goblins, Halflings, and Kobolds
+                    </li>
+                    <li class="fact-group">
+                        <strong>Official Language:</strong> Hattei
+                    </li>
+                    <li class="fact-group">
+                        <strong>Secondary Languages:</strong> <br/> Danvar, Ennyl, Gespic, Oklali
+                    </li>
+                    <li class="fact-group">
+                        <strong>Motto/Slogan:</strong> One struggle, one people, one destiny.
+                    </li>
+                    <li class="fact-group">
+                        <strong>Alternative Names:</strong> Hestein
+                    </li>
+                    <li class="fact-group">
+                        <strong>Demonym:</strong> Hesteinese
+                    </li>
+                    <li class="fact-group">
+                        <strong>Founding Date:</strong> 39/10/450 EE
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 AentisWiki. All rights reserved.</p>
+</footer>
